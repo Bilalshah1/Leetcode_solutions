@@ -8,26 +8,28 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* reverseList(ListNode* head) {
+    ListNode *reverseList(ListNode *head)
+    {
         vector<int> data;
-        ListNode* temp=head;
-        int i=0;
-        while(temp!=NULL)
+        ListNode *temp = head;
+        int i = 0;
+        while (temp != NULL)
         {
             data.push_back(temp->val);
-            temp=temp->next;
+            temp = temp->next;
         }
-        reverse(data.begin(),data.end());
-        temp=head;
-        while(temp!=NULL)
+        reverse(data.begin(), data.end());
+        temp = head;
+        while (temp != NULL)
         {
-            temp->val=data[i];
-            temp=temp->next;
+            temp->val = data[i];
+            temp = temp->next;
             i++;
         }
-        temp=head;
+        temp = head;
 
         return temp;
     }

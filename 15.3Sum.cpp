@@ -11,7 +11,7 @@ public:
         {
             for (int r2 = r1 + 1; r2 < nums.size(); r2++)
             {
-                for (int r3 = r2 + 1    ; r3 < nums.size(); r3++)
+                for (int r3 = r2 + 1; r3 < nums.size(); r3++)
                 {
                     sum = nums[r1] + nums[r2] + nums[r3];
                     if (sum == 0)

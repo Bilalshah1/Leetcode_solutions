@@ -1,10 +1,12 @@
 
-class Solution {
+class Solution
+{
 public:
-    string intToRoman(int num) {
-        unordered<int,string> map;
-        string Roman="";
-        int max=0;
+    string intToRoman(int num)
+    {
+        unordered<int, string> map;
+        string Roman = "";
+        int max = 0;
         map[1] = "I";
         map[4] = "IV";
         map[5] = "V";
@@ -18,16 +20,17 @@ public:
         map[500] = "D";
         map[900] = "CM";
         map[1000] = "M";
-        while(num!=0)
+        while (num != 0)
         {
-            for(auto & pair: map)
+            for (auto &pair : map)
             {
-                if(num>=pair.first){
-                    max=pair.first;
+                if (num >= pair.first)
+                {
+                    max = pair.first;
                 }
             }
-            Roman+=map[max];
-            num-=max;
+            Roman += map[max];
+            num -= max;
         }
-}
+    }
 };

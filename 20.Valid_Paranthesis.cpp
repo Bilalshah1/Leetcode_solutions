@@ -20,7 +20,8 @@ public:
             {
                 expression.push(s[i]);
             }
-            if(expression.empty()) return 0;
+            if (expression.empty())
+                return 0;
             if (s[i] == ')' || s[i] == ']' || s[i] == '}')
             {
                 for (const auto &pair : opposite_pair)
@@ -36,7 +37,8 @@ public:
                     {
                         expression.pop();
                     }
-                    else{
+                    else
+                    {
                         return 0;
                     }
                 }
