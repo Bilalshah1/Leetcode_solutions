@@ -14,19 +14,20 @@ public:
                 if (digits[n] == 9)
                 {
                     digits[n] = 0;
-                    carry=1;
+                    carry = 1;
                 }
 
                 else
                 {
                     digits[n]++;
-                    carry=0;
+                    carry = 0;
                     break;
                 }
                 n--;
             }
         }
-        if(carry==1) digits.insert(digits.begin(), 1);
+        if (carry == 1)
+            digits.insert(digits.begin(), 1);
         return digits;
     }
 };
