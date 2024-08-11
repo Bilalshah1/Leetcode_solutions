@@ -1,7 +1,7 @@
  long long int nCr(int n, int r) {
     if (r > n) return 0;
     if (r == 0 || r == n) return 1;
-    if (r > n - r) r = n - r;  // Take advantage of symmetry
+    if (r > n - r) r = n - r; 
      long long int numerator = 1;
      long long int denominator = 1;
     for (int i = 0; i < r; ++i) {
