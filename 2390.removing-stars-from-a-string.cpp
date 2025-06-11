@@ -10,9 +10,7 @@ public:
             if (s[i] != '*')
                 st.push(s[i]);
             else
-            {
                 st.pop();
-            }
         }
 
         while (!st.empty())
