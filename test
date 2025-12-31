@@ -1,0 +1,41 @@
+import google.generativeai as genai
+
+SYSTEM_PROMPT = """
+You are a highly skilled DevOps engineer.
+When the user gives a task, respond with:
+1) Explanation
+2) Step-by-step instructions
+3) CLI commands
+4) Required code/config (YAML, Dockerfile, Terraform etc.)
+5) Verification steps
+6) Common pitfalls
+Be precise and practical.
+"""
+
+def main():
+    api_key = input("Enter Gemini API Key: ").strip()
+    if not api_key:
+        print("API key required")
+        return
+
+    genai.configure(api_key=api_key)
+
+    model = genai.GenerativeModel(
+        model_name="gemini-2.5-flash",
+        system_instruction=SYSTEM_PROMPT
+    )
+
+    while True:
+        task = input("\nTask (or 'exit'): ").strip()
+        if task.lower() in ["exit", "quit"]:
+            break
+
+        try:
+            response = model.generate_content(task)
+            print("\n" + response.text + "\n")
+        except Exception as e:
+            print("Error:", str(e))
+
+if __name__ == "__main__":
+    main()
+"AIzaSyBBoCScUtx                              R9IPVlv7Gs1GVg108nAjPzuU
